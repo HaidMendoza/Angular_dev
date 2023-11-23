@@ -1,0 +1,30 @@
+<body>
+    <div class="box">
+        <span class="borderline"></span>
+        <form [formGroup]="Registro">
+            <h2>Usuario</h2>
+            <div class="inputbox" >
+                <input type="text" required="required" formControlName="name" >
+                <span>Name</span>
+                <i></i>
+            </div>
+            <span *ngIf="Registro.get('name')?.invalid && Registro.get('name')?.touched">este campo es necesario</span>
+            <div class="inputbox">
+                <input type="text" required="required" formControlName="job">
+                <span>job</span>
+                <i></i>
+            </div>
+            <span *ngIf="Registro.get('job')?.invalid && Registro.get('job')?.touched">este campo es nesesario</span>
+            <div class="links">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+              <input type="submit" value="registar" [disabled]="Registro.get('name')?.invalid  || Registro.get('job')?.invalid">       
+        </form>
+    </div> 
+</body>
+
+
+
+
+

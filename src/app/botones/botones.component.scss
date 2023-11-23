@@ -1,0 +1,25 @@
+.btn{
+    font-size: 100;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border:1px solid black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.rojo{
+    @extend .btn;
+    background-color: red;
+}
+.verde{
+    @extend .btn;
+    background-color: green;
+}
+.azul{
+    @extend .btn;
+    background-color: blue;
+}

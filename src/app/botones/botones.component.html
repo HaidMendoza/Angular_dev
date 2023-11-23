@@ -1,0 +1,14 @@
+<div>
+    <button [disabled]="habilator" class="rojo" (click)="cambiarRojo()" >rojo</button>
+    <button [disabled]="habilator" class="azul" (click)="cambiarAzul()">azul</button>
+    <button [disabled]="habilator" class="verde" (click)="cambiarVerde()">verde</button>
+</div>
+<p [class]="color">texto</p>
+<button class="btn" (click)="habilitar()">Activa/desactiva</button>
+
+
+<div>
+    <button (click)="MostrarImagen()">imagen 1</button>
+    <button (click)="MostrarImagenes()">imagen 2</button>
+    <img [src]="Image" alt="">
+</div>
