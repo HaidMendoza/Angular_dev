@@ -1,25 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { RegistroComponent } from './registro/registro.component';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 
 const routes: Routes = [
-
   {
     path: '',
-    redirectTo: '/register',
+    redirectTo: 'register',
     pathMatch: 'full'
   },
   {
-    path: '/register',
+    path: 'register',
     component: RegistroComponent
+  },
+  {
+    path: 'lista-usuario',
+    component:ListaUsuarioComponent,
   }
-]
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

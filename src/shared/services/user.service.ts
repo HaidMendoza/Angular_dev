@@ -12,7 +12,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  createUser(data: any){
+  createUser(data: User){
     return this.http.post(this._user, data)
+  }
+  getAllUser(){
+    return this.http.get<any[]>(this._user)
   }
 }

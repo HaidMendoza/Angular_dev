@@ -19,8 +19,6 @@ export class RegistroComponent implements OnInit{
   ngOnInit(): void {
   }
 
-
-
 enviarDatos(){
   if(this.form.valid){
     this.userService.createUser(this.form.value).subscribe(dato =>{
