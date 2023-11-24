@@ -1,5 +1,5 @@
 export const environments ={
     urlBase: {
-        url: ''
+        url: 'https://reqres.in/'
     }
 }

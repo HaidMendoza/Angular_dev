@@ -1,19 +1,32 @@
 import { Component,OnInit } from '@angular/core';
-import { FormsModule,FormControl,Validator, FormGroup, Validators } from '@angular/forms';
+import { FormsModule,FormControl,Validator, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UserService } from 'src/shared/services/user.service';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
-export class RegistroComponent {
- Registro = new FormGroup({
-    'name': new FormControl("",Validators.required),
-    'job' : new FormControl("",Validators.required)
-});
-job:Boolean=true;
+export class RegistroComponent implements OnInit{
+  form!: FormGroup;
+
+  constructor(private userService: UserService , private fb: FormBuilder) {
+    this.form = fb.group({
+      name: ['' , Validators.required],
+      job: ['', Validators.required]
+    })
+  }
+  ngOnInit(): void {
+  }
+
+
 
 enviarDatos(){
-  console.log(this.Registro.value);
+  if(this.form.valid){
+    this.userService.createUser(this.form.value).subscribe(dato =>{
+      console.log(this.form.value)
+      this.form.reset();
+    })
+  }
 }
 }

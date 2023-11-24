@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { BotonesComponent } from './botones/botones.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule
-    ,ReactiveFormsModule
+    ,ReactiveFormsModule, AppRoutingModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
